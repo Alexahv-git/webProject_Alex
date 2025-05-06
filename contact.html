@@ -1,51 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- icon --> 
+  <meta charset="UTF-8" />
+  <title>Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-    <header>
-        <header class="page-header">
-            <img src="images/logo_cropped.png" alt="DrinkWater Logo" class="logo-page">
-        </header>
-        <h1 class="site-title">DrinkWater</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="catalog.html">Catalog</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <a href="shoppingCart.html" class="cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
-    </header>
 
-    <main>
-        
+  <header class="main-header">
+    <div class="main-header-inner">
+      <div class="nav-left">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="logo-title-wrapper">
+        <a href="index.html">
+          <img src="images/logo_onlypng.png" alt="DrinkWater Logo" class="logo-inline">
+        </a>
+        <h1 class="site-title-inline">DrinkWater</h1>
+      </div>
+
+      <div class="nav-right">
+        <a href="shoppingCart.html" class="cart-icon">
+          <i class="fas fa-shopping-bag"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
     <section class="contact-form">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="text" placeholder="Subject">
-            <textarea placeholder="Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <div class="contact-info">
-            <p>Phone: 123-456-7890</p>
-            <p>Email: info@drinkwater.com</p>
-            <p>Address: 123 Water Lane</p>
-        </div>
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Subject">
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+
+      <div class="contact-info" style="margin-top: 2rem;">
+        <p>Phone: 123-456-7890</p>
+        <p>Email: info@drinkwater.com</p>
+        <p>Address: 123 Water Lane</p>
+      </div>
     </section>
-    
-    </main>
-    <footer>
-        <p>&copy; 2025 DrinkWater</p>
-    </footer>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DrinkWater</p>
+  </footer>
+
 </body>
 </html>

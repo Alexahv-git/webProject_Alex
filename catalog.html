@@ -1,39 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Catalog</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- icon --> 
+  <meta charset="UTF-8" />
+  <title>Catalog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-    <header>
-        <header cless="page-header">
-            <img src="images/logo_cropped.png" alt="DrinkWater Logo" class="logo-page">
-        </header>
-        <h1 class="site-title">DrinkWater</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="catalog.html">Catalog</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <a href="shoppingCart.html" class="cart-icon">
-          <i class="fas fa-shopping-cart"></i>
+
+  <header class="main-header">
+    <div class="main-header-inner">
+      <div class="nav-left">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="logo-title-wrapper">
+        <a href="index.html">
+          <img src="images/logo_onlypng.png" alt="DrinkWater Logo" class="logo-inline">
         </a>
-    </header>
-    <main>
-        <section class="search-filter">
-            <input type="text" placeholder="Search products...">
-            <select>
-                <option>All Categories</option>
-                <option>Thermal</option>
-                <option>Colorful</option>
-                <option>Kids</option>
-                <option>Eco-friendly</option>
-            </select>
-        </section>
+        <h1 class="site-title-inline">DrinkWater</h1>
+      </div>
+
+      <div class="nav-right">
+        <a href="shoppingCart.html" class="cart-icon">
+          <i class="fas fa-shopping-bag"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="search-filter" style="text-align:center; margin: 2rem;">
+      <input type="text" placeholder="Search products..." style="max-width: 300px;">
+      <select style="max-width: 200px;">
+        <option>All Categories</option>
+        <option>Thermal</option>
+        <option>Colorful</option>
+        <option>Kids</option>
+        <option>Eco-friendly</option>
+      </select>
+    </section>
         <section class="products">
             <div class="product-card">
               <img src="images/1 sport bottle.png" alt="Sport Bottle" style="width:100%; border-radius: 10px;">

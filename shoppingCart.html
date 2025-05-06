@@ -1,52 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shoppingcart</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- icon --> 
+  <meta charset="UTF-8" />
+  <title>Shopping Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-    <header>
-        <header class="page-header">
-            <img src="images/logo_cropped.png" alt="DrinkWater Logo" class="logo-page">
-        </header>
-        <h1 class="site-title">DrinkWater</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="catalog.html">Catalog</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+
+  <header class="main-header">
+    <div class="main-header-inner">
+      <div class="nav-left">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="logo-title-wrapper">
+        <a href="index.html">
+          <img src="images/logo_onlypng.png" alt="DrinkWater Logo" class="logo-inline">
+        </a>
+        <h1 class="site-title-inline">DrinkWater</h1>
+      </div>
+
+      <div class="nav-right">
         <a href="shoppingCart.html" class="cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
-    </header>
-    <main>
-        
+          <i class="fas fa-shopping-bag"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
     <section class="cart">
-        <h2>Your Shopping Cart</h2>
-        <div class="cart-items">
-            <div class="cart-item">
-                <p>Sport Bottle x2 - $30</p>
-                <button>Remove</button>
-            </div>
+      <h2>Your Shopping Cart</h2>
+
+      <div class="cart-items">
+        <div class="cart-item">
+          <p>Sport Bottle x2 - ₪90</p>
+          <button>Remove</button>
         </div>
-        <h3>Total: $30</h3>
-        <form class="checkout-form">
-            <input type="text" placeholder="Full Name" required>
-            <input type="text" placeholder="Address" required>
-            <input type="email" placeholder="Email" required>
-            <input type="text" placeholder="Phone" required>
-            <button type="submit">Place Order</button>
-        </form>
+      </div>
+
+      <h3>Total: ₪90</h3>
+
+      <form class="checkout-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Address" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Phone" required>
+        <button type="submit">Place Order</button>
+      </form>
     </section>
-    
-    </main>
-    <footer>
-        <p>&copy; 2025 DrinkWater</p>
-    </footer>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DrinkWater</p>
+  </footer>
+
 </body>
 </html>
