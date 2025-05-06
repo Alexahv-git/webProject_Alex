@@ -8,11 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <img src="images/logo_cropped.png" alt="DrinkWater Logo" class="logo-top">
-        </a>
-        <h1>DrinkWater</h1>
+    <header class="header-inline">
+        <div class="logo-title-wrapper">
+          <a href="index.html">
+            <img src="images/logo_cropped.png" alt="DrinkWater Logo" class="logo-inline">
+          </a>
+          <h1 class="site-title-inline">DrinkWater</h1>
+        </div>
         <nav>
             <a href="index.html">Home</a>
             <a href="catalog.html">Catalog</a>
@@ -20,14 +22,14 @@
             <a href="shoppingCart.html">Cart</a>
         </nav>
     </header>
-    <main>
-        <section class="about">
-            <img src="images/5 glass bottle.png" alt="Glass Bottle" style="max-width: 250px; border-radius: 15px;">
+    <main class="product-page">
+        <div class="product-main">
+            <img src="images/5 glass bottle.png" alt="Glass Bottle" class="product-large">
             <h2>Glass Bottle</h2>
             <p>Eco-friendly glass bottle</p>
             <p><strong>Price:</strong> ₪50</p>
             <button onclick="alert('Added to cart!')">Add to Cart</button>
-        </section>
+        </div>
     </main>
     <footer>
         <p>&copy; 2025 DrinkWater</p>
