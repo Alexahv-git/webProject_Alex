@@ -6,9 +6,11 @@
   <title>Home</title>
   <link rel="stylesheet" href="styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/> <!-- icon cart-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> <!-- swiper gallery -->
 </head>
 <body>
+
   <header class="main-header">
     <div class="main-header-inner">
       <div class="nav-left">
@@ -16,14 +18,14 @@
         <a href="catalog.html">Catalog</a>
         <a href="contact.html">Contact</a>
       </div>
-  
+
       <div class="logo-title-wrapper">
         <a href="index.html">
           <img src="images/logo_onlypng.png" alt="DrinkWater Logo" class="logo-inline">
         </a>
         <h1 class="site-title-inline">DrinkWater</h1>
       </div>
-  
+
       <div class="nav-right">
         <a href="shoppingCart.html" class="cart-icon">
           <i class="fas fa-shopping-bag"></i>
@@ -43,16 +45,23 @@
 
     <section class="about">
       <h2>About DrinkWater</h2>
-      <p>At DrinkWater, we believe in a greener future with reusable water bottles designed for everyone.</p>
+      <p>A
+        At DrinkWater, we believe that small choices make a big difference.<br>
+        Our reusable bottles are designed for real life—simple, durable, and eco-friendly.<br>
+        Whether you're at work, at the gym, or on the go, we make it easy (and stylish) to stay hydrated and help the planet along the way.
+      </p>
     </section>
 
     <section class="gallery">
       <h2>Our Customers</h2>
-      <div class="gallery-images">
-        <img src="images/drink1.jpg" alt="Person drinking water">
-        <img src="images/drink2.jpg" alt="Person drinking water">
-        <img src="images/drink3.jpg" alt="Person drinking water">
-        <img src="images/drink4.jpg" alt="Person drinking water">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="images/drink1.png" alt="Customer 1" /></div>
+          <div class="swiper-slide"><img src="images/drink2.png" alt="Customer 2" /></div>
+          <div class="swiper-slide"><img src="images/drink3.png" alt="Customer 3" /></div>
+          <div class="swiper-slide"><img src="images/drink4.png" alt="Customer 4" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
     </section>
 
@@ -60,10 +69,16 @@
       <h2>Featured Products</h2>
       <div class="products">
         <div class="product-card">
+          <a href="bottle1.html">
+            <img src="images/1 sport bottle.png" alt="Sport Bottle">
+          </a>
           <h3>Sport Bottle</h3>
           <p>Durable and lightweight, perfect for workouts.</p>
         </div>
         <div class="product-card">
+          <a href="bottle2.html">
+            <img src="images/2 thermal bottle.png" alt="Thermal Bottle">
+          </a>
           <h3>Thermal Bottle</h3>
           <p>Keeps your drink hot or cold for hours.</p>
         </div>
@@ -74,5 +89,18 @@
   <footer>
     <p>&copy; 2025 DrinkWater</p>
   </footer>
+
+  <!-- Swiper Script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: { delay: 3000 },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+
 </body>
 </html>

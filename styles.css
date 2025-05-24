@@ -44,10 +44,27 @@
   }
   
   .about, .featured-products, .contact-form, .cart {
-    padding: 4rem 2rem;
+    padding: 4em 2rem;
     text-align: center;
   }
-  
+
+ /*רווח בין אודות לגלרייה ********************/
+  .about p {
+    margin-bottom: 0;
+  }
+
+  .about {
+    padding-bottom: 1.5rem;
+  }
+
+  .gallery {
+    padding-top: 1.5rem;
+  }
+  .about h2, .gallery h2, .featured-products h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem; /* או פחות לפי העין שלך */
+}
+
   .products, .cart-items {
     display: flex;
     flex-wrap: wrap;
@@ -152,9 +169,17 @@
   
   .cart-icon {
     font-size: 22px;
-    background-color: #d0e9f9;
+    color: var(--white); /* צבע האייקון עצמו */
+    background-color: var(--text-dark); /* רקע כהה יותר – כמעט שחור */
     padding: 10px;
     border-radius: 50%;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+  }
+
+  .cart-icon:hover {
+    background-color: var(--hover-color); /* כחול כהה */
+    color: var(--white); /* אייקון לבן */
   }
   
   /* Gallery Section */
@@ -228,5 +253,52 @@
     .nav-left, .nav-right {
       order: 1;
     }
+  }
+
+  /*תמונות של המומלצים בעמוד בית*/ 
+  .featured-products img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .featured-products img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Swiper styles */
+.swiper {
+    width: 100%;
+    padding: 2rem 0;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .swiper-slide img:hover {
+    transform: scale(1.03);
+  }
+  
+  .swiper-pagination {
+    margin-top: 1rem;
+    text-align: center;
   }
   
