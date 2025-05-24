@@ -1,12 +1,12 @@
 :root {
-    --primary-color: #9ACBD0;
-    --secondary-color: #48A6A7;
-    --hover-color: #2973B2;
-    --background-light: #F2EFE7;
-    --text-dark: #333;
-    --white: #ffffff;
-    --black: #000000;
-  }
+  --primary-color: #5FA8D3;       /* תכלת־כחול נעים */
+  --secondary-color: #2E6F95;     /* כחול כהה */
+  --hover-color: #174F70;         /* כחול עמוק יותר */
+  --background-light: #E3F2F9;    /* רקע תכלת־בהיר */
+  --text-dark: #1C2C39;           /* טקסט כהה */
+  --white: #ffffff;
+  --black: #000000;
+}
   
   body {
     margin: 0;
@@ -168,10 +168,10 @@
   }
   
   .cart-icon {
-    font-size: 22px;
+    font-size: 28px;
     color: var(--white); /* צבע האייקון עצמו */
     background-color: var(--text-dark); /* רקע כהה יותר – כמעט שחור */
-    padding: 10px;
+    padding: 12px;
     border-radius: 50%;
     transition: color 0.3s ease, background-color 0.3s ease;
     display: inline-block;
@@ -270,35 +270,46 @@
     transform: scale(1.05);
   }
   
-  /* Swiper styles */
-.swiper {
-    width: 100%;
-    padding: 2rem 0;
-  }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
+
+  .css-gallery {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
   }
   
-  .swiper-slide img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
+  .css-gallery img {
+    flex: 0 0 auto;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    scroll-snap-align: center;
+  }
+
+  /* רקע מים*/ 
+  .hero-water {
+    background-image: url("images/hero-water.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: var(--white);
   }
   
-  .swiper-slide img:hover {
-    transform: scale(1.03);
+  .hero-water::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3); /* שכבת כהות קלה */
+    z-index: 0;
   }
   
-  .swiper-pagination {
-    margin-top: 1rem;
-    text-align: center;
+  .hero-water .hero-content {
+    position: relative;
+    z-index: 1;
   }
+  
+  
   
