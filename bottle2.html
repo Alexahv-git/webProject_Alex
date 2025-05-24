@@ -15,7 +15,6 @@
       <div class="nav-left">
         <a href="index.html">Home</a>
         <a href="catalog.html">Catalog</a>
-      
       </div>
 
       <div class="logo-title-wrapper">
@@ -28,6 +27,7 @@
       <div class="nav-right">
         <a href="shoppingCart.html" class="cart-icon">
           <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count">0</span>
         </a>
       </div>
     </div>
@@ -39,13 +39,17 @@
       <h2 class="product-title">Thermal Bottle</h2>
       <p>Keeps drinks hot or cold</p>
       <p><strong>Price:</strong> ₪60</p>
-      <button onclick="alert('Added to cart!')">Add to Cart</button>
+      <button class="add-to-cart">Add to Cart</button>
     </div>
   </main>
 
   <footer>
     <p>&copy; 2025 DrinkWater</p>
   </footer>
+
+  <!-- Load cart functionality -->
+  <script src="cart.js"></script>
+  <script src="cart-enhancements.js"></script>
 
 </body>
 </html>
