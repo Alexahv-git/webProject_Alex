@@ -33,6 +33,7 @@ function removeFromCart(name) {
   cart = cart.filter(item => item.name !== name);
   saveCart(cart);
   renderCart(); // Only works if renderCart exists on the page
+  updateCartCount(); // 
 }
 
 // Render the shopping cart content in the shoppingCart.html page
@@ -94,8 +95,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-
-
-
-
-

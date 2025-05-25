@@ -38,14 +38,16 @@
       <input type="text" placeholder="Search products..." style="max-width: 300px;">
       <select style="max-width: 200px;">
         <option>All Categories</option>
+        <option>Sport</option>
         <option>Thermal</option>
-        <option>Colorful</option>
+        <option>Eco-Friendly</option>
         <option>Kids</option>
-        <option>Eco-friendly</option>
+        <option>Glass</option>
+        <option>Compact</option>
       </select>
     </section>
         <section class="products">
-            <div class="product-card">
+            <div class="product-card" data-category="sport">
               <img src="images/1 sport bottle.png" alt="Sport Bottle" style="width:100%; border-radius: 10px;">
               <h3><a href="bottle1.html">Sport Bottle</a></h3>
               <p>Lightweight drinking bottle</p>
@@ -53,7 +55,7 @@
               <button class="add-to-cart">Add to Cart</button>
             </div>
           
-            <div class="product-card">
+            <div class="product-card" data-category="thermal">
               <img src="images/2 thermal bottle.png" alt="Thermal Bottle" style="width:100%; border-radius: 10px;">
               <h3><a href="bottle2.html">Thermal Bottle</a></h3>
               <p>Keeps drinks hot or cold</p>
@@ -61,7 +63,7 @@
               <button class="add-to-cart">Add to Cart</button>
             </div>
           
-            <div class="product-card">
+            <div class="product-card" data-category="eco-friendly">
               <img src="images/3 eco bottle.png" alt="Eco Bottle" style="width:100%; border-radius: 10px;">
               <h3><a href="bottle3.html">Eco Bottle</a></h3>
               <p>Made from recycled plastic</p>
@@ -69,7 +71,7 @@
               <button class="add-to-cart">Add to Cart</button>
             </div>
           
-            <div class="product-card">
+            <div class="product-card" data-category="kids" >
               <img src="images/4 kids fun bottle.png" alt="Kids Fun Bottle" style="width:100%; border-radius: 10px;">
               <h3><a href="bottle4.html">Kids Fun Bottle</a></h3>
               <p>Fun and colorful for kids</p>
@@ -77,7 +79,7 @@
               <button class="add-to-cart">Add to Cart</button>
             </div>
           
-            <div class="product-card">
+            <div class="product-card" data-category="glass">
               <img src="images/5 glass bottle.png" alt="Glass Bottle" style="width:100%; border-radius: 10px;">
               <h3><a href="bottle5.html">Glass Bottle</a></h3>
               <p>Eco-friendly glass bottle</p>
@@ -85,7 +87,7 @@
               <button class="add-to-cart">Add to Cart</button>
             </div>
           
-            <div class="product-card">
+            <div class="product-card" data-category="compact">
               <img src="images/6 compact bottle.png" alt="Compact Bottle" style="width:100%; border-radius: 10px;">
               <h3><a href="bottle6.html">Compact Bottle</a></h3>
               <p>Fits in any bag</p>
@@ -103,5 +105,6 @@
       
         <script src="cart.js"></script>
         <script src="cart-enhancements.js"></script>
+        <script src="catalog-filter.js"></script>
       </body>
-      </html>
+      </html> 
