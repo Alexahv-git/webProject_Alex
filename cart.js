@@ -1,4 +1,3 @@
-
 // localStorage.removeItem("cart"); // TEMP: clears cart on page load *******************
 
 
@@ -42,6 +41,16 @@ function renderCart() {
 
   const container = document.querySelector(".cart-items");
   const totalElement = document.querySelector("#cart-total");
+  const emptyMessage = document.querySelector("#empty-cart-message");
+
+  if (cart.length === 0) {
+    if (emptyMessage) emptyMessage.style.display = "block";
+    if (totalElement) totalElement.innerText = "Total: ₪0";
+    return;
+  } else {
+    if (emptyMessage) emptyMessage.style.display = "none";
+  }
+  
   if (!container) return; // Avoid errors if cart section not found
 
   container.innerHTML = "";

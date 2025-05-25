@@ -48,7 +48,8 @@ function addToCart(name, price) {
   saveCart(cart);
   updateCartCount();
   showToast(`${name} added to cart`);
-}
+} 
+
 
 // ==============================
 // Run on Load
