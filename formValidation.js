@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       showToast("Your order has been placed! We’ll be in touch soon 💧");
 
       localStorage.removeItem("cart");
+      updateCartCount();   
       form.reset();
 
       const cartContainer = document.querySelector(".cart-items");
