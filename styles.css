@@ -174,7 +174,7 @@ button {
   border-radius: 30px;
   margin-top: 1rem;
   width: auto;
-  text-decoration: none; /* ← זה מה שמבטל את הקו */
+  text-decoration: none; 
 }
 
 .btn:hover {

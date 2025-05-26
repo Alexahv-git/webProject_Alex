@@ -1,30 +1,31 @@
 /* // localStorage.removeItem("cart"); // TEMP: clears cart on page load ******************/ 
 
 
-// ==============================
-// Load the cart from localStorage
-// ==============================
+// ==============================================
+// Load the current cart from localStorage, If there's no cart yet, returns an empty array
+// ==============================================
 function loadCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
 }
 
-// ==============================
-// Save the cart to localStorage
-// ==============================
+// ==============================================
+// Save the updated cart back to localStorage, need the cart to "remember" items between page refreshes
+// ==============================================
 function saveCart(cart) {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 // ==============================
-// Show a toast message (success)
+// Show a temporary toast message
+// ==============================
 function showToast(message) {
   const toast = document.createElement("div");
   toast.className = "custom-toast";
   toast.innerText = message;
   document.body.appendChild(toast);
-
+  // Make the toast appear after a short delay
   setTimeout(() => toast.classList.add("visible"), 100);
-
+  // Hide the toast after 3 seconds
   setTimeout(() => {
     toast.classList.remove("visible");
     setTimeout(() => toast.remove(), 300);
@@ -32,7 +33,8 @@ function showToast(message) {
 }
 
 // ==============================
-// Update the cart badge icon
+// Update the cart icon badge (top right) to show how many total items are in the cart
+// ==============================
 function updateCartCount() {
   const cart = loadCart();
   const count = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -45,100 +47,103 @@ function updateCartCount() {
 }
 
 // ==============================
-// Add item to cart
+// Add item to cart (if exists, increment quantity)
+// ==============================
 function addToCart(name, price) {
   const cart = loadCart();
   const existingItem = cart.find(item => item.name === name);
 
   if (existingItem) {
-    existingItem.quantity++;
+    existingItem.quantity++;  // Increase quantity if already in cart
   } else {
-    cart.push({ name, price, quantity: 1 });
+    cart.push({ name, price, quantity: 1 });// Add new item with quantity 1
   }
 
-  saveCart(cart);
-  updateCartCount();
-  showToast(`${name} added to cart`);
+  saveCart(cart); // Save updated cart
+  updateCartCount(); // Refresh cart icon
+  showToast(`${name} added to cart`);// Show success message
 }
 
 // ==============================
 // Remove item from cart
+// ==============================
 function removeFromCart(name) {
-  let cart = loadCart();
-  cart = cart.filter(item => item.name !== name);
-  saveCart(cart);
-  renderCart?.();
-  updateCartCount();
+  let cart = loadCart(); // Get current cart
+  cart = cart.filter(item => item.name !== name); // Keep only items that don't match the name
+  saveCart(cart);// Save updated cart
+  renderCart?.();/// Refresh cart display (if this function exists on page)
+  updateCartCount();// Update icon
 }
 
 // ==============================
-// Render cart items on shoppingCart.html
+// Display the cart contents on the shopping cart html page
+// ==============================
 function renderCart() {
   const cart = loadCart();
-  const container = document.querySelector(".cart-items");
-  const totalElement = document.querySelector("#cart-total");
-  const emptyMessage = document.querySelector("#empty-cart-message");
+  const container = document.querySelector(".cart-items"); // Where to show the items
+  const totalElement = document.querySelector("#cart-total");// Where to show the total price
+  const emptyMessage = document.querySelector("#empty-cart-message"); // Message to show when cart is empty
 
-  if (!container) return;
+  if (!container) return; // Stop if there's no container
 
-  // If cart is empty
+  // If cart is empty – show message and clear total
   if (cart.length === 0) {
-    if (emptyMessage) emptyMessage.style.display = "block";
+    if (emptyMessage) emptyMessage.style.display = "block"; // Show "empty cart" message
     container.innerHTML = "";
-    if (totalElement) totalElement.innerText = "Total: ₪0";
+    if (totalElement) totalElement.innerText = "Total: ₪0"; // Set total to 0
     return;
   } else {
-    if (emptyMessage) emptyMessage.style.display = "none";
+    if (emptyMessage) emptyMessage.style.display = "none"; // Hide "empty" message
   }
-
-  container.innerHTML = "";
-  let total = 0;
-
+  // Render all items in the cart
+  container.innerHTML = ""; // Clear current list
+  let total = 0; // Initialize total cost
+  // Loop through items in the cart
   cart.forEach(item => {
-    const div = document.createElement("div");
-    div.className = "cart-item";
+    const div = document.createElement("div"); // Create a new div for each item
+    div.className = "cart-item"; // Give it a class
     div.innerHTML = `
       <p>${item.name} x${item.quantity} - ₪${item.price * item.quantity}</p>
       <button onclick="removeFromCart('${item.name}')">Remove</button>
     `;
-    container.appendChild(div);
-    total += item.price * item.quantity;
+    container.appendChild(div); // Add the item to the container
+    total += item.price * item.quantity; // Add to total
   });
 
-  if (totalElement) totalElement.innerText = `Total: ₪${total}`;
+  if (totalElement) totalElement.innerText = `Total: ₪${total}`; // Update total price on page
 }
 
-// ==============================
-// On page load – hook buttons and update UI
-// ==============================
+// ==============================================
+// When the page loads: initialize buttons and cart display
+// ==============================================
 document.addEventListener("DOMContentLoaded", () => {
-  updateCartCount();
-  renderCart?.(); // Only on shoppingCart.html
+  updateCartCount(); // Show correct number on cart icon
+  renderCart?.(); // Show cart items, only if function is defined
 
-  // Catalog products
-  const productCards = document.querySelectorAll(".product-card");
+  // Add-to-cart buttons on catalog products
+  const productCards = document.querySelectorAll(".product-card"); 
   productCards.forEach(card => {
-    const name = card.querySelector("h3 a")?.innerText;
-    const price = parseFloat(card.querySelector(".price")?.innerText.replace("₪", ""));
-    const button = card.querySelector(".add-to-cart");
+    const name = card.querySelector("h3 a")?.innerText; // Product name
+    const price = parseFloat(card.querySelector(".price")?.innerText.replace("₪", "")); // Product price
+    const button = card.querySelector(".add-to-cart");  // Add-to-cart button
 
     if (button && name && !isNaN(price)) {
       button.addEventListener("click", () => {
-        addToCart(name, price);
+        addToCart(name, price); // Add product to cart when clicked
       });
     }
   });
 
-  // Single bottle product
+  // Add-to-cart button on single product page
   const singleProductButton = document.querySelector("button.add-to-cart");
   if (singleProductButton && document.querySelector(".product-title")) {
-    const name = document.querySelector(".product-title").innerText;
-    const priceSpan = document.querySelector(".price");
+    const name = document.querySelector(".product-title").innerText; // Get product name
+    const priceSpan = document.querySelector(".price"); // Price
     const price = parseFloat(priceSpan?.innerText?.replace("₪", "").trim());
 
     if (name && !isNaN(price)) {
       singleProductButton.addEventListener("click", () => {
-        addToCart(name, price);
+        addToCart(name, price); // Add to cart when clicked
       });
     }
   }
