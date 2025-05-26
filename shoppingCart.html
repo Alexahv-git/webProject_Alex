@@ -4,21 +4,29 @@
   <meta charset="UTF-8" />
   <title>Shopping Cart | DrinkWater</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- styles and fonts -->
   <link rel="stylesheet" href="styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <!-- אייקון ללשונית הדפדפן -->
-    <link rel="icon" type="image/png" href="images/favicon_blue.png" />
+  
+  <!-- browser tab icon -->
+  <link rel="icon" type="image/png" href="images/favicon_blue.png" />
 </head>
+
 <body>
 
+<!-- header with navigation and logo -->
   <header class="main-header">
     <div class="main-header-inner">
+
+      <!-- left menu -->
       <div class="nav-left">
         <a href="index.html">Home</a>
         <a href="catalog.html">Catalog</a>
       </div>
 
+      <!-- logo and site name in the center -->
       <div class="logo-title-wrapper">
         <a href="index.html">
           <img src="images/logo_onlypng.png" alt="DrinkWater Logo" class="logo-inline">
@@ -26,10 +34,11 @@
         <h1 class="site-title-inline">DrinkWater</h1>
       </div>
 
+      <!-- cart icon on the right -->
       <div class="nav-right">
         <a href="shoppingCart.html" class="cart-icon">
           <i class="fas fa-shopping-bag"></i>
-          <span class="cart-count">0</span> <!-- ✅ מספר פריטים -->
+          <span class="cart-count">0</span> <!-- cart item count -->  
         </a>
       </div>
     </div>
@@ -37,15 +46,20 @@
 
   <main class="page-background">
     <section class="cart">
-    <h2 font-size: 1.6rem;>Your Shopping Cart</h2>
+      <h2>Your Shopping Cart</h2>
 
+      <!-- list of items in the cart -->
       <div class="cart-items"></div>
+
+       <!-- message shown if the cart is empty -->
       <p id="empty-cart-message" style="display: none; font-weight: bold; margin-top: 1rem;">
         Your cart is empty 🛒
       </p>
 
+       <!-- total price -->
       <h3 id="cart-total">Total: ₪0</h3>
 
+      <!-- checkout form -->
       <form class="checkout-form">
         <input type="text" placeholder="Full Name" required>
         <input type="text" placeholder="Address" required>
@@ -56,20 +70,21 @@
     </section>
   </main>
 
+   <!-- footer -->
   <footer>
     <p>&copy; 2025 DrinkWater</p>
   </footer>
 
-  <!-- ✅ סקריפטים בסדר הנכון -->
-
+  <!-- form validation and cart logic -->
   <script src="formValidation.js"></script>
   <script src="cart.js"></script>
-  <script src="cart-enhancements.js"></script>
- 
 
+ 
+  <!-- run the cart rendering function -->
   <script>
     renderCart();
   </script>
+ 
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 
 /* ==========================================
-   1. משתנים גלובליים (ערכת צבעים)
+   1. Global Variables (Color Palette)
 ========================================== */
 :root {
   --primary-color: #5FA8D3;
@@ -13,53 +13,55 @@
   --header-bg: #F2EFE7;
   --header-text: #1C2C39;
   --footer-color: #E5F2F7;
+  --badge-color: #C0E5F2; /* darken then footer */
 }
 
 /* ==========================================
-   2. בסיס העמוד
+   2. Base Page Styling
 ========================================== */
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--header-bg);
-  color: var(--text-dark);
+  margin: 0;  /* removes default margin around the page */
+  font-family: 'Poppins', sans-serif; /* sets the font for all text */ 
+  background-color: var(--header-bg);  /* Uues the header background color as page background */
+  color: var(--text-dark); /* sets the text color */
 }
 
 /* ==========================================
-   3. Header & ניווט עליון
+   3. Header & Navigation -
+      Styles for the top site header and menu
 ========================================== */
 .main-header {
   width: 100%;
-  background-color: var(--header-bg);
-  padding: 2.5rem 0;
+  background-color: var(--header-bg); /* same beige background as body */
+  padding: 2.5rem 0; /* vertical spacing inside header */
 }
 
 .main-header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  flex-wrap: wrap;
+  max-width: 1200px; /* pimit header content width */
+  margin: 0 auto;  /* center it horizontally */
+  padding: 0 1rem; /* Padding from the sides */
+  display: flex; /* use flexbox layout */
+  justify-content: space-between; /* Space between left and right sections */
+  align-items: center; /* vertically center items */
+  position: relative;  /* allow positioning of inner elements */
+  flex-wrap: wrap;   /* wrap on small screens */
 }
 
 .logo-title-wrapper {
-  position: absolute;
+  position: absolute;  /* center the logo/title horizontally */
   left: 50%;
-  transform: translateX(-50%);
-  display: flex;
+  transform: translateX(-50%); 
+  display: flex;  /* layout logo and title side by side */
   align-items: center;
-  gap: 10px;
+  gap: 10px;  /* space between logo and title */
 }
 
 .logo-inline {
-  width: 60px;
+  width: 60px;   /* set logo size */
   height: auto;
 }
 
-.site-title-inline {
+.site-title-inline { /* main title */
   font-size: 2.2rem;
   font-weight: 600;
   color: var(--header-text);
@@ -67,10 +69,10 @@ body {
 }
 
 .nav-left a, .nav-right a {
-  font-size: 14px;
-  text-decoration: none;
-  margin: 0 8px;
-  transition: color 0.3s ease;
+  font-size: 14px;  /* small font size for links */
+  text-decoration: none; /* remove underline */
+  margin: 0 8px;   /* horizontal spacing between links */
+  transition: color 0.3s ease;  /* smooth color transition on hover */
 }
 
 .nav-left a {
@@ -84,21 +86,21 @@ body {
 }
 
 .nav-left a:hover,
-.nav-right a:hover {
+.nav-right a:hover {   /* on hover, change to darker blue */
   color: var(--secondary-color);
 }
 
 /* ==========================================
-   4. סל קניות (אייקון + כמות)
+   4. Cart Icon and Counter - for shopping cart 
 ========================================== */
 .cart-icon {
-  position: relative;
+  position: relative;  /* allows positioning of item counter */
   display: inline-block;
-  color: var(--text-dark);
+  color: var(--text-dark);  /* dark color for the icon */
   padding: 0;
   background: none;
   border-radius: 0;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /* smooth color change on hover */
 }
 
 .cart-icon i {
@@ -106,25 +108,26 @@ body {
 }
 
 .cart-count {
-  position: absolute;
+  position: absolute;  /* position counter on top-right of icon */
   top: -8px;
   right: -8px;
-  background-color: var(--primary-color);
-  color: var(--white);
+  background-color: var(--badge-color);
+  color: var(--text-dark);
   font-size: 12px;
   padding: 2px 6px;
-  border-radius: 50%;
-  display: none;
+  border-radius: 50%;  /* make it a circle */
+  display: none;    /* hidden by default */
   font-weight: bold;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);  /* subtle shadow for effect */
 }
 
 /* ==========================================
-   5. Hero Section
+   5. Hero Section - 
+      Large banner area with background image
 ========================================== */
 .hero-water {
-  background-image: url("images/hero-water.jpg");
-  background-size: cover;
+  background-image: url("images/hero-water.jpg");  /* set background image */
+  background-size: cover;  /* cover the entire area */
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
@@ -137,7 +140,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* שכבת כהות מעודנת */
+  background: rgba(0, 0, 0, 0.4); /* dark overlay for better contrast */
   z-index: 0;
 }
 
@@ -150,7 +153,7 @@ body {
 
 
 /* ==========================================
-   6. כפתורים כלליים
+   6. General Buttons
 ========================================== */
 .btn,
 button {
@@ -193,7 +196,8 @@ button.add-to-cart {
 }
 
 /* ==========================================
-   7. טפסים
+   7. Forms -
+      input fields and form containers
 ========================================== */
 input, textarea, select {
   width: 100%;
@@ -220,15 +224,15 @@ input, textarea, select {
 }
 
 /* ==========================================
-   8. עמודים כלליים (sections)
+   8. general sections styling
 ========================================== */
 .about, .featured-products, .contact-form, .cart {
-  padding: 4em 2rem;
-  text-align: center;
+  padding: 4em 2rem;  /* add spacing inside the section */
+  text-align: center; 
 }
 
 .about {
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.5rem; /* less spacing at the bottom */
 }
 
 .about p {
@@ -245,6 +249,8 @@ input, textarea, select {
   font-size: 1.5rem;
   color: var(--text-dark);
 }
+
+/* responsive adjustment: smaller spacing on small screens */
 @media (max-width: 768px) {
   .featured-products h2 {
     margin-bottom: 1.5rem;
@@ -252,27 +258,27 @@ input, textarea, select {
 }
 
 .featured-products img {
-  width: 100%;
-  height: auto;
+  width: 100%;  /* make images fill their container */
+  height: auto; /* keep original image ratio */
   border-radius: 10px;
   margin-bottom: 1rem;
 }
 
 /* ==========================================
-   9. כרטיסי מוצר וסל קניות
+   9. product cards and shopping cart
 ========================================== */
 .products, .cart-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
+  display: flex; /* use flexbox layout */
+  flex-wrap: wrap; /* allow items to wrap on smaller screens */
+  gap: 2rem; /* space between items */
+  justify-content: center; /* center the items horizontally */
 }
 
 .cart-items {
   background-color: #F6FBFD;
   padding: 1.5rem;
   border-radius: 15px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05); /* soft outer shadow */
 }
 
 .product-card, .cart-item {
@@ -281,13 +287,13 @@ input, textarea, select {
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 250px;
-  transition: transform 0.3s;
+  transition: transform 0.3s; /* smooth grow effect on hover */
   color: var(--text-dark);
-  margin-bottom: 2rem;
+  margin-bottom: 2rem;  /* space below each card */
 }
 
 .product-card:hover, .cart-item:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* slightly bigger on hover */
 }
 
 #cart-total {
@@ -297,81 +303,82 @@ input, textarea, select {
 }
 
 /* ==========================================
-   10. עמוד מוצר בודד
+   10.single product page
 ========================================== */
 .product-page {
-  display: flex;
-  align-items: flex-start;
+  display: flex; 
+  align-items: flex-start; /* align items to the top */
   padding: 2rem;
   gap: 2rem;
 }
 
 .product-main {
-  flex: 1;
-  text-align: center;
+  flex: 1; /* take all available space */
+  text-align: center; /* center the content inside */
 }
 
 .product-large {
-  max-width: 300px;
-  width: 100%;
+  max-width: 300px;  /* limit the image width */
+  width: 100%; /* make it responsive */
   padding: 0.5rem;
   background-color: var(--white);
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
-}
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* soft shadow around the box */
+  margin-bottom: 1rem; /* space below the image */
+} 
 
 .product-title {
   font-size: 1.5rem;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px 0; /* space below the title */
   color: var(--text-dark);
   font-weight: 600;
   text-align: center;
 }
 
 /* ==========================================
-   11. גלריה
+   11. gallery
 ========================================== */
 .gallery {
-  padding: 4rem 2rem;
-  text-align: center;
+  padding: 4rem 2rem; /* space around the section */
+  text-align: center;  /* center the content */
 }
 
-.gallery h2 {
-  margin-bottom: 1rem;
+.gallery h2 { 
+  margin-bottom: 1rem; /* space below the heading */
   font-size: 2rem;
   color: var(--text-dark);
 }
 
 .gallery-images, .css-gallery {
-  display: flex;
-  overflow-x: auto;
-  gap: 1rem;
-  padding: 1rem 0;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  display: flex; /* place images in a row */
+  overflow-x: auto; /* allow horizontal scrolling */
+  gap: 1rem; /* space between images */
+  padding: 1rem 0; /* space above and below images */
+  scroll-snap-type: x mandatory; /* smooth snap scrolling for images */
+  scrollbar-width: none;  /* hide scrollbar in Firefox */
+  -ms-overflow-style: none;  /* hide scrollbar in IE/Edge */
 }
 
+/* hide scrollbar in Chrome/Safari */
 .gallery-images::-webkit-scrollbar,
 .css-gallery::-webkit-scrollbar {
   display: none;
 }
 
 .css-gallery img, .gallery-images img {
-  flex: 0 0 auto;
-  width: 350px;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 15px;
-  scroll-snap-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 auto;  /* prevent images from shrinking */
+  width: 350px;  /* fixed image width */
+  height: 350px; /* fixed image height */
+  object-fit: cover; /* cover the box without distortion */
+  border-radius: 15px; /* rounded corners */
+  scroll-snap-align: center; /* snap image to the center when scrolling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth effects */
 }
 
 .css-gallery img:hover,
 .gallery-images img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: scale(1.03); /* slightly zoom in on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* soft shadow when hovered */
 }
 
 /* ==========================================
@@ -381,7 +388,7 @@ input, textarea, select {
   position: fixed;
   top: 20px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* perfect centering */
   background-color: #ffffff;
   color: var(--secondary-color);
   border: 1px solid var(--secondary-color);
@@ -389,14 +396,14 @@ input, textarea, select {
   border-radius: 10px;
   font-weight: bold;
   font-size: 15px;
-  opacity: 0;
-  transition: all 0.3s ease;
-  z-index: 9999;
+  opacity: 0; /* hidden by default */
+  transition: all 0.3s ease; /* smooth appearance and disappearance */
+  z-index: 9999;  /* stay on top of all content */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.custom-toast.visible {
-  opacity: 1;
+.custom-toast.visible { 
+  opacity: 1; /* show the toast when .visible is added */
 }
 
 /* ==========================================
@@ -411,41 +418,44 @@ footer {
 }
 
 /* ==========================================
-   14. רספונסיביות
+   14. responsive design
 ========================================== */
 @media (max-width: 768px) {
   .products, .cart-items {
-    flex-direction: column;
-  }
+    flex-direction: column; /* stack items vertically on small screens */
+  } 
 
   .main-header-inner {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column; /* stack header content vertically */
+    align-items: center;  /* center the content */
+    gap: 10px;   /* space between elements */
   }
 
   .logo-title-wrapper {
     position: static;
-    transform: none;
-    justify-content: center;
+    transform: none;  /* cancel centering */
+    justify-content: center; /* center logo and title */
     margin-bottom: 0.5rem;
   }
 
   .nav-left, .nav-right {
-    order: 1;
+    order: 1;  /* move nav links to the bottom */
   }
 }
 
+/* ==========================================
+   15. layout fixes and small adjustments
+========================================== */
 
 .page-background > * {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* make sure content is above background */
 }
 
 .search-filter {
   background: transparent;
   text-align: center;
-  padding: 2rem 0;
+  padding: 2rem 0;  /* vertical spacing */
 }
 
 .product-card h3 a {
@@ -455,6 +465,28 @@ footer {
 }
 
 .product-card h3 a:hover {
-  color: var(--secondary-color);
+  color: var(--secondary-color); /* change color on hover */
 }
 
+html, body {
+  height: 100%; /* take full height */
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  min-height: calc(100vh - 100px);   /* layout support to keep footer at bottom */
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;   /* make main content fill space */
+}
+
+.product-main .add-to-cart {
+  width: auto;  /* button doesn't stretch */
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  display: inline-block;
+}

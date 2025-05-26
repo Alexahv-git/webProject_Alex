@@ -4,22 +4,30 @@
   <meta charset="UTF-8" />
   <title>Catalog | DrinkWater</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- CSS files and fonts -->
   <link rel="stylesheet" href="styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <!-- אייקון ללשונית הדפדפן -->
-  <link rel="icon" type="image/png" href="images/favicon_blue.png" />
+  
+  <!-- browser tab icon -->
+  <link rel="icon" type="image/png" href="images/favicon_blue.png" /> 
+
 </head>
 <body>
+  <div class="wrapper">
 
-  <header class="main-header">
+  <!-- site header with navigation and logo -->
+  <header class="main-header"> 
+    <div class="main-header-inner"> 
 
-    <div class="main-header-inner">
+      <!-- left menu links -->
       <div class="nav-left">
         <a href="index.html">Home</a>
         <a href="catalog.html">Catalog</a>
       </div>
 
+      <!-- center logo and site name -->
       <div class="logo-title-wrapper">
         <a href="index.html">
           <img src="images/logo_onlypng.png" alt="DrinkWater Logo" class="logo-inline">
@@ -27,16 +35,19 @@
         <h1 class="site-title-inline">DrinkWater</h1>
       </div>
 
+      <!-- shopping cart icon -->
       <div class="nav-right">
         <a href="shoppingCart.html" class="cart-icon">
           <i class="fas fa-shopping-bag"></i>
-          <span class="cart-count">0</span> <!-- 🛒 מספר מוצרים -->
+          <span class="cart-count">0</span> <!-- number of items in cart -->
         </a>
       </div>
     </div>
   </header>
 
   <main class="page-background">
+
+    <!-- product search and filter options -->
     <section class="search-filter">
       <input type="text" placeholder="Search products..." style="max-width: 300px;">
       <select style="max-width: 200px;">
@@ -49,7 +60,11 @@
         <option>Compact</option>
       </select>
     </section>
+
+         <!-- product cards -->
         <section class="products">
+
+             <!-- each product is inside a card -->
             <div class="product-card" data-category="sport">
               <img src="images/1 sport bottle.png" alt="Sport Bottle" style="width:100%; border-radius: 10px;">
               <h3><a href="bottle1.html">Sport Bottle</a></h3>
@@ -101,13 +116,16 @@
           </section>
           
         </main>
-      
+      </div>
+
+         <!-- footer -->
         <footer>
           <p>&copy; 2025 DrinkWater</p>
         </footer>
-      
+
+        <!-- JavaScript for cart and filters -->
         <script src="cart.js"></script>
-        <script src="cart-enhancements.js"></script>
-        <script src="catalog-filter.js"></script>
+        <script src="catalog-filter.js"></script> 
+
       </body>
       </html> 
