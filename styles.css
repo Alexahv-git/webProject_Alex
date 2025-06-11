@@ -302,6 +302,7 @@ input, textarea, select {
   margin-top: 1rem;
 }
 
+
 /* ==========================================
    10.single product page
 ========================================== */
@@ -317,15 +318,18 @@ input, textarea, select {
   text-align: center; /* center the content inside */
 }
 
-.product-large {
+.product-image {
   max-width: 300px;  /* limit the image width */
   width: 100%; /* make it responsive */
   padding: 0.5rem;
   background-color: var(--white);
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* soft shadow around the box */
-  margin-bottom: 1rem; /* space below the image */
+  margin-bottom: 1rem; /* space below the image */ 
 } 
+
+
+ 
 
 .product-title {
   font-size: 1.5rem;

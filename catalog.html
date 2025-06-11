@@ -9,37 +9,29 @@
   <link rel="stylesheet" href="styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  
-  <!-- browser tab icon -->
-  <link rel="icon" type="image/png" href="images/favicon_blue.png" /> 
-
+  <link rel="icon" type="image/png" href="images/favicon_blue.png" />
 </head>
+
 <body>
   <div class="wrapper">
 
-  <!-- site header with navigation and logo -->
+  <!-- Site header -->
   <header class="main-header"> 
     <div class="main-header-inner"> 
-
-      <!-- left menu links -->
       <div class="nav-left">
         <a href="index.html">Home</a>
         <a href="catalog.html">Catalog</a>
       </div>
-
-      <!-- center logo and site name -->
       <div class="logo-title-wrapper">
         <a href="index.html">
           <img src="images/logo_onlypng.png" alt="DrinkWater Logo" class="logo-inline">
         </a>
         <h1 class="site-title-inline">DrinkWater</h1>
       </div>
-
-      <!-- shopping cart icon -->
       <div class="nav-right">
         <a href="shoppingCart.html" class="cart-icon">
           <i class="fas fa-shopping-bag"></i>
-          <span class="cart-count">0</span> <!-- number of items in cart -->
+          <span class="cart-count">0</span>
         </a>
       </div>
     </div>
@@ -47,7 +39,7 @@
 
   <main class="page-background">
 
-    <!-- product search and filter options -->
+    <!-- Filter section -->
     <section class="search-filter">
       <input type="text" placeholder="Search products..." style="max-width: 300px;">
       <select style="max-width: 200px;">
@@ -61,71 +53,81 @@
       </select>
     </section>
 
-         <!-- product cards -->
-        <section class="products">
+    <!-- Product list -->
+    <section class="products">
 
-             <!-- each product is inside a card -->
-            <div class="product-card" data-category="sport">
-              <img src="images/1 sport bottle.png" alt="Sport Bottle" style="width:100%; border-radius: 10px;">
-              <h3><a href="bottle1.html">Sport Bottle</a></h3>
-              <p>Lightweight drinking bottle</p>
-              <p class="price">₪45</p>
-              <button class="add-to-cart">Add to Cart</button>
-            </div>
-          
-            <div class="product-card" data-category="thermal">
-              <img src="images/2 thermal bottle.png" alt="Thermal Bottle" style="width:100%; border-radius: 10px;">
-              <h3><a href="bottle2.html">Thermal Bottle</a></h3>
-              <p>Keeps drinks hot or cold</p>
-              <p class="price">₪60</p>
-              <button class="add-to-cart">Add to Cart</button>
-            </div>
-          
-            <div class="product-card" data-category="eco-friendly">
-              <img src="images/3 eco bottle.png" alt="Eco Bottle" style="width:100%; border-radius: 10px;">
-              <h3><a href="bottle3.html">Eco Bottle</a></h3>
-              <p>Made from recycled plastic</p>
-              <p class="price">₪40</p>
-              <button class="add-to-cart">Add to Cart</button>
-            </div>
-          
-            <div class="product-card" data-category="kids" >
-              <img src="images/4 kids fun bottle.png" alt="Kids Fun Bottle" style="width:100%; border-radius: 10px;">
-              <h3><a href="bottle4.html">Kids Fun Bottle</a></h3>
-              <p>Fun and colorful for kids</p>
-              <p class="price">₪35</p>
-              <button class="add-to-cart">Add to Cart</button>
-            </div>
-          
-            <div class="product-card" data-category="glass">
-              <img src="images/5 glass bottle.png" alt="Glass Bottle" style="width:100%; border-radius: 10px;">
-              <h3><a href="bottle5.html">Glass Bottle</a></h3>
-              <p>Eco-friendly glass bottle</p>
-              <p class="price">₪50</p>
-              <button class="add-to-cart">Add to Cart</button>
-            </div>
-          
-            <div class="product-card" data-category="compact">
-              <img src="images/6 compact bottle.png" alt="Compact Bottle" style="width:100%; border-radius: 10px;">
-              <h3><a href="bottle6.html">Compact Bottle</a></h3>
-              <p>Fits in any bag</p>
-              <p class="price">₪30</p>
-              <button class="add-to-cart">Add to Cart</button>
-            </div>
-
-          </section>
-          
-        </main>
+      <div class="product-card" data-category="sport">
+        <a href="product.html?id=1">
+          <img src="images/1 sport bottle.png" alt="Sport Bottle" style="width:100%; border-radius: 10px;">
+        </a>
+        <h3><a href="product.html?id=1">Sport Bottle</a></h3>
+        <p>Lightweight drinking bottle</p>
+        <p class="price">₪45</p>
+        <button class="add-to-cart">Add to Cart</button>
       </div>
 
-         <!-- footer -->
-        <footer>
-          <p>&copy; 2025 DrinkWater</p>
-        </footer>
+      <div class="product-card" data-category="thermal">
+        <a href="product.html?id=2">
+          <img src="images/2 thermal bottle.png" alt="Thermal Bottle" style="width:100%; border-radius: 10px;">
+        </a>
+        <h3><a href="product.html?id=2">Thermal Bottle</a></h3>
+        <p>Keeps drinks hot or cold</p>
+        <p class="price">₪60</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
 
-        <!-- JavaScript for cart and filters -->
-        <script src="cart.js"></script>
-        <script src="catalog-filter.js"></script> 
+      <div class="product-card" data-category="eco-friendly">
+        <a href="product.html?id=3">
+          <img src="images/3 eco bottle.png" alt="Eco Bottle" style="width:100%; border-radius: 10px;">
+        </a>
+        <h3><a href="product.html?id=3">Eco Bottle</a></h3>
+        <p>Made from recycled plastic</p>
+        <p class="price">₪40</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
 
-      </body>
-      </html> 
+      <div class="product-card" data-category="kids">
+        <a href="product.html?id=4">
+          <img src="images/4 kids fun bottle.png" alt="Kids Fun Bottle" style="width:100%; border-radius: 10px;">
+        </a>
+        <h3><a href="product.html?id=4">Kids Fun Bottle</a></h3>
+        <p>Fun and colorful for kids</p>
+        <p class="price">₪35</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="glass">
+        <a href="product.html?id=5">
+          <img src="images/5 glass bottle.png" alt="Glass Bottle" style="width:100%; border-radius: 10px;">
+        </a>
+        <h3><a href="product.html?id=5">Glass Bottle</a></h3>
+        <p>Eco-friendly glass bottle</p>
+        <p class="price">₪50</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="compact">
+        <a href="product.html?id=6">
+          <img src="images/6 compact bottle.png" alt="Compact Bottle" style="width:100%; border-radius: 10px;">
+        </a>
+        <h3><a href="product.html?id=6">Compact Bottle</a></h3>
+        <p>Fits in any bag</p>
+        <p class="price">₪30</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+    </section>
+  </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 DrinkWater</p>
+  </footer>
+
+  <!-- JavaScript files -->
+  <script src="cart.js"></script>
+  <script src="catalog-filter.js"></script>
+
+</body>
+</html>

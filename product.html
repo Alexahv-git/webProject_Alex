@@ -2,38 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Eco Bottle | DrinkWater</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- Main CSS stylesheet -->
-  <link rel="stylesheet" href="styles.css"/>
-  <!-- Google Fonts: Poppins -->
+  <title>Product Page | DrinkWater</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <!-- Icon for the browser tab -->
   <link rel="icon" type="image/png" href="images/favicon_blue.png" />
 </head>
-
-
 <body>
-  <!-- Site header with navigation and logo -->
+
+  <!-- Site Header -->
   <header class="main-header">
     <div class="main-header-inner">
-
-      <!-- Left-side navigation menu -->
       <div class="nav-left">
         <a href="index.html">Home</a>
-        <a href="catalog.html">Catalog</a> 
+        <a href="catalog.html">Catalog</a>
       </div>
-
-      <!-- Center logo and site title -->
       <div class="logo-title-wrapper">
         <a href="index.html">
-          <img src="images/logo_onlypng.png" alt="DrinkWater Logo" class="logo-inline">
+          <img src="images/logo_onlypng.png" alt="Logo" class="logo-inline">
         </a>
         <h1 class="site-title-inline">DrinkWater</h1>
       </div>
-
-      <!-- Right-side cart icon -->
       <div class="nav-right">
         <a href="shoppingCart.html" class="cart-icon">
           <i class="fas fa-shopping-bag"></i>
@@ -43,25 +35,24 @@
     </div>
   </header>
 
-  <!-- Main product content -->
+  <!-- Product Details -->
   <main class="product-page">
     <div class="product-main">
-      <img src="images/3 eco bottle.png" alt="Eco Bottle" class="product-large">
-      <h2 class="product-title">Eco Bottle</h2>
-      <p>Made from recycled plastic</p>
-      <p><strong>Price:</strong> <span class="price">40</span> ₪</p>
+      <img class="product-image" src="" alt="Product Image" />
+      <h2 class="product-title"></h2>
+      <p class="product-desc"></p>
+      <p><strong>Price:</strong> <span class="product-price"></span> ₪</p>
       <button class="add-to-cart">Add to Cart</button>
     </div>
   </main>
 
-  <!-- Page footer -->
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 DrinkWater</p>
   </footer>
 
-  <!-- JavaScript file for shopping cart functionality -->
+  <!-- JavaScript files -->
+  <script src="product.js"></script>
   <script src="cart.js"></script>
- 
- 
 </body>
 </html>
