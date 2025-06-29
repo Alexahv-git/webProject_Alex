@@ -1,0 +1,26 @@
+{
+  "name": "drinkwater_group4",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexahv-git/webProject_Alex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alexahv-git/webProject_Alex/issues"
+  },
+  "homepage": "https://github.com/Alexahv-git/webProject_Alex#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1"
+  }
+}
