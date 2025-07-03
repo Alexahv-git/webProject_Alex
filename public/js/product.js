@@ -67,7 +67,7 @@ const products = [
   
     // Add to Cart button
     document.querySelector(".add-to-cart").addEventListener("click", () => {
-      addToCart(product.name, product.price); // from cart.js
+    addToCart(product.id, product.name, product.price);
     });
   });
   

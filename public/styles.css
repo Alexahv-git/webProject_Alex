@@ -37,15 +37,17 @@ body {
 }
 
 .main-header-inner {
-  max-width: 1200px; /* pimit header content width */
-  margin: 0 auto;  /* center it horizontally */
-  padding: 0 1rem; /* Padding from the sides */
-  display: flex; /* use flexbox layout */
-  justify-content: space-between; /* Space between left and right sections */
-  align-items: center; /* vertically center items */
-  position: relative;  /* allow positioning of inner elements */
-  flex-wrap: wrap;   /* wrap on small screens */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
 }
+
+
 
 .logo-title-wrapper {
   position: absolute;  /* center the logo/title horizontally */
@@ -245,7 +247,7 @@ input, textarea, select {
   color: var(--text-dark);
 }
 .featured-products h2 {
-  margin-bottom: 2rem; /* יותר ריווח מתחת לכותרת */
+  margin-bottom: 2rem;
   font-size: 1.5rem;
   color: var(--text-dark);
 }
@@ -361,6 +363,9 @@ input, textarea, select {
   scroll-snap-type: x mandatory; /* smooth snap scrolling for images */
   scrollbar-width: none;  /* hide scrollbar in Firefox */
   -ms-overflow-style: none;  /* hide scrollbar in IE/Edge */
+  justify-content: center;       /* Center images inside the gallery */
+  flex-wrap: wrap;               /* Allow wrapping if screen is narrow */
+
 }
 
 /* hide scrollbar in Chrome/Safari */

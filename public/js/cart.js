@@ -1,9 +1,5 @@
-/* // localStorage.removeItem("cart"); // TEMP: clears cart on page load ******************/ 
 
-
-// ==============================================
 // Load the current cart from localStorage, If there's no cart yet, returns an empty array
-// ==============================================
 function loadCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
 }
@@ -49,20 +45,21 @@ function updateCartCount() {
 // ==============================
 // Add item to cart (if exists, increment quantity)
 // ==============================
-function addToCart(name, price) {
+function addToCart(id, name, price) {
   const cart = loadCart();
-  const existingItem = cart.find(item => item.name === name);
+  const existingItem = cart.find(item => item.id === id);
 
   if (existingItem) {
-    existingItem.quantity++;  // Increase quantity if already in cart
+    existingItem.quantity++; // Increase quantity
   } else {
-    cart.push({ name, price, quantity: 1 });// Add new item with quantity 1
+    cart.push({ id, name, price, quantity: 1 }); //
   }
 
-  saveCart(cart); // Save updated cart
-  updateCartCount(); // Refresh cart icon
-  showToast(`${name} added to cart`);// Show success message
+  saveCart(cart);
+  updateCartCount();
+  showToast(`${name} added to cart`);
 }
+
 
 // ==============================
 // Remove item from cart
@@ -121,18 +118,20 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCart?.(); // Show cart items, only if function is defined
 
   // Add-to-cart buttons on catalog products
-  const productCards = document.querySelectorAll(".product-card"); 
-  productCards.forEach(card => {
-    const name = card.querySelector("h3 a")?.innerText; // Product name
-    const price = parseFloat(card.querySelector(".price")?.innerText.replace("₪", "")); // Product price
-    const button = card.querySelector(".add-to-cart");  // Add-to-cart button
+const productCards = document.querySelectorAll(".product-card"); 
+productCards.forEach(card => {
+  const id = parseInt(card.dataset.id); // 
+  const name = card.querySelector("h3 a")?.innerText;
+  const price = parseFloat(card.querySelector(".price")?.innerText.replace("₪", ""));
+  const button = card.querySelector(".add-to-cart");
 
-    if (button && name && !isNaN(price)) {
-      button.addEventListener("click", () => {
-        addToCart(name, price); // Add product to cart when clicked
-      });
-    }
-  });
+  if (button && id && name && !isNaN(price)) {
+    button.addEventListener("click", () => {
+      addToCart(id, name, price); // 
+    });
+  }
+});
+
 
   // Add-to-cart button on single product page
   const singleProductButton = document.querySelector("button.add-to-cart");
@@ -140,12 +139,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = document.querySelector(".product-title").innerText; // Get product name
     const priceSpan = document.querySelector(".price"); // Price
     const price = parseFloat(priceSpan?.innerText?.replace("₪", "").trim());
+    const id = parseInt(new URLSearchParams(window.location.search).get("id"));
 
-    if (name && !isNaN(price)) {
-      singleProductButton.addEventListener("click", () => {
-        addToCart(name, price); // Add to cart when clicked
-      });
-    }
+
+      if (id && name && !isNaN(price)) {
+       singleProductButton.addEventListener("click", () => {
+        addToCart(id, name, price);
+        });
+      }
+
   }
 });
 
